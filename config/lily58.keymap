@@ -68,7 +68,7 @@
             bindings = <
 &kp ESC  &none        &none           &none               &none             &none                        &none  &none              &none                &none            &none           &none
 &none    &kp Q        &kp W           &kp E               &kp R             &kp T                        &kp Y  &td_a              &td_ae               &td_oe           &kp P           &none
-&none    &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_COMMAND D  &mt LEFT_SHIFT F  &kp G                        &kp H  &mt RIGHT_SHIFT J  &mt RIGHT_COMMAND K  &mt RIGHT_ALT L  &mt RCTRL SEMI  &none
+&none    &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_COMMAND D  &mt LEFT_SHIFT F  &kp G                        &kp H  &mt RIGHT_SHIFT J  &mt RIGHT_COMMAND K  &mt RIGHT_ALT L  &mt RCTRL SEMI  &kp DOUBLE_QUOTES
 &none    &kp Z        &kp X           &kp C               &kp V             &kp B  &none        &none    &kp N  &kp M              &kp COMMA            &kp DOT          &kp FSLH        &none
                                       &none               &kp TAB           &mo 1  &kp SPACE    &kp RET  &mo 2  &kp BSPC           &none
             >;
@@ -83,10 +83,10 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &none   &none   &none   &none   &none                     &none     &none     &none         &none      &none   &none
-&none   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                    &kp N6    &kp N7    &kp N8        &kp N9     &kp N0  &none
-&none   &trans  &trans  &trans  &trans  &none                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none   &none
-&none   &none   &none   &none   &none   &none   &none     &none   &none     &none     &none         &none      &none   &none
+&trans  &none   &none   &none   &none   &none                     &none     &none     &none         &none      &none              &none
+&none   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                    &kp N6    &kp N7    &kp N8        &kp N9     &kp N0             &none
+&none   &trans  &trans  &trans  &trans  &none                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp DOUBLE_QUOTES  &none
+&none   &none   &none   &none   &none   &none   &none     &none   &none     &none     &none         &none      &none              &none
                         &none   &trans  &trans  &trans    &trans  &trans    &trans    &none
             >;
         };
