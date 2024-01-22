@@ -17,7 +17,7 @@
             #binding-cells = <0>;
             bindings = <&kp O>, <&oe_macro>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <125>;
         };
 
         td_ae: td_ae {
@@ -26,7 +26,7 @@
             #binding-cells = <0>;
             bindings = <&kp I>, <&ae_macro>;
 
-            tapping-term-ms = <75>;
+            tapping-term-ms = <150>;
         };
 
         td_a: td_a {
@@ -34,17 +34,15 @@
             label = "TD_A";
             #binding-cells = <0>;
             bindings = <&kp U>, <&a_macro>;
-
-            tapping-term-ms = <50>;
         };
     };
 
     macros {
-        ae_macro: ae {
+        ae_macro: ae_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp A>;
-            label = "AE";
+            label = "AE_MACRO";
         };
 
         oe_macro: oe_macro {
