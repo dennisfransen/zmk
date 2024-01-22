@@ -9,11 +9,48 @@
 
 / {
     behaviors {
+        oe: oe {
+            compatible = "zmk,behavior-tap-dance";
+            label = "OE";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&oe_macro>;
+        };
+
         ae: ae {
             compatible = "zmk,behavior-tap-dance";
             label = "AE";
             #binding-cells = <0>;
-            bindings = <&kp O>, <&none>;
+            bindings = <&kp I>, <&ae_macro>;
+        };
+
+        a: a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "A";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&a_macro>;
+        };
+    };
+
+    macros {
+        ae_macro: ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp A>;
+            label = "AE";
+        };
+
+        oe_macro: oe_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp O>;
+            label = "OE_MACRO";
+        };
+
+        a_macro: a_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(A)>;
+            label = "A_MACRO";
         };
     };
 
