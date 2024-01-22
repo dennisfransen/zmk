@@ -70,7 +70,7 @@
 &none    &kp Q        &kp W           &kp E               &kp R             &kp T                        &kp Y  &td_a              &td_ae               &td_oe           &kp P           &none
 &none    &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_COMMAND D  &mt LEFT_SHIFT F  &kp G                        &kp H  &mt RIGHT_SHIFT J  &mt RIGHT_COMMAND K  &mt RIGHT_ALT L  &mt RCTRL SEMI  &kp DOUBLE_QUOTES
 &none    &kp Z        &kp X           &kp C               &kp V             &kp B  &none        &none    &kp N  &kp M              &kp COMMA            &kp DOT          &kp FSLH        &none
-                                      &none               &kp TAB           &mo 1  &kp SPACE    &kp RET  &mo 2  &kp BSPC           &none
+                                      &none               &kp TAB           &mo 2  &kp SPACE    &kp RET  &mo 1  &kp BSPC           &none
             >;
         };
 
