@@ -16,6 +16,8 @@
             label = "TD_OE";
             #binding-cells = <0>;
             bindings = <&kp O>, <&oe_macro>;
+
+            tapping-term-ms = <100>;
         };
 
         td_ae: td_ae {
@@ -23,6 +25,8 @@
             label = "TD_AE";
             #binding-cells = <0>;
             bindings = <&kp I>, <&ae_macro>;
+
+            tapping-term-ms = <75>;
         };
 
         td_a: td_a {
@@ -30,6 +34,8 @@
             label = "TD_A";
             #binding-cells = <0>;
             bindings = <&kp U>, <&a_macro>;
+
+            tapping-term-ms = <50>;
         };
     };
 
