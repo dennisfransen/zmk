@@ -12,6 +12,29 @@
 &mt { flavor = "tap-preferred"; };
 
 / {
+    behaviors {
+        td_a: td_a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_A";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&none>;
+        };
+
+        td_ae: td_ae {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_AE";
+            #binding-cells = <0>;
+            bindings = <&kp U>;
+        };
+
+        td_oe: td_oe {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OE";
+            #binding-cells = <0>;
+            bindings = <&kp I>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
