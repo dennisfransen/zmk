@@ -20,7 +20,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_A";
             #binding-cells = <0>;
-            bindings = <&kp H>, <&ma_a>;
+            bindings = <&kp H>, <&kp LA(A)>;
 
             tapping-term-ms = <150>;
         };
@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AE";
             #binding-cells = <0>;
-            bindings = <&kp U>, <&kp LA(A)>;
+            bindings = <&kp U>, <&ma_ae>;
 
             tapping-term-ms = <150>;
         };
@@ -45,7 +45,7 @@
     };
 
     macros {
-        ma_a: ma_a {
+        ma_ae: ma_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp A>;
