@@ -9,7 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
 
-&mt { flavor = "tap-preferred"; };
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+};
 
 / {
     behaviors {
@@ -17,21 +20,43 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_A";
             #binding-cells = <0>;
-            bindings = <&kp H>, <&none>;
+            bindings = <&kp H>, <&ma_a>;
+
+            tapping-term-ms = <150>;
         };
 
         td_ae: td_ae {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AE";
             #binding-cells = <0>;
-            bindings = <&kp U>;
+            bindings = <&kp U>, <&kp LA(A)>;
+
+            tapping-term-ms = <150>;
         };
 
         td_oe: td_oe {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_OE";
             #binding-cells = <0>;
-            bindings = <&kp I>;
+            bindings = <&kp I>, <&ma_oe>;
+
+            tapping-term-ms = <150>;
+        };
+    };
+
+    macros {
+        ma_a: ma_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp A>;
+            label = "MA_A";
+        };
+
+        ma_oe: ma_oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp O>;
+            label = "MA_OE";
         };
     };
 
@@ -48,8 +73,8 @@
 
             bindings = <
 &none  &none       &none       &none        &none         &none                                   &none            &none         &none        &none       &none               &none
-&none  &kp Q       &kp W       &kp E        &kp R         &kp T                                   &kp Y            &kp U         &kp I        &kp O       &kp P               &none
-&none  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G                                   &kp H            &mt RSHIFT J  &mt RCTRL K  &mt LALT L  &mt RGUI SEMICOLON  &none
+&none  &kp Q       &kp W       &kp E        &kp R         &kp T                                   &kp Y            &td_ae        &td_oe       &kp O       &kp P               &none
+&none  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G                                   &td_a            &mt RSHIFT J  &mt RCTRL K  &mt LALT L  &mt RGUI SEMICOLON  &none
 &none  &lt 1 Z     &kp X       &kp C        &kp V         &kp B      &none          &none         &kp N            &kp M         &kp COMMA    &kp DOT     &lt 1 SLASH         &none
                                &none        &lt 6 ESCAPE  &lt 4 TAB  &lt 2 SPACE    &lt 3 RETURN  &lt 5 BACKSPACE  &lt 7 DELETE  &none
             >;
