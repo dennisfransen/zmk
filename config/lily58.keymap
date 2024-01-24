@@ -11,61 +11,15 @@
 
 / {
     behaviors {
-        td_oe: td_oe {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_OE";
-            #binding-cells = <0>;
-            bindings = <&kp O>, <&oe_macro>;
-
-            tapping-term-ms = <150>;
-        };
-
-        td_ae: td_ae {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_AE";
-            #binding-cells = <0>;
-            bindings = <&kp I>, <&ae_macro>;
-
-            tapping-term-ms = <150>;
-        };
-
-        td_a: td_a {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_A";
-            #binding-cells = <0>;
-            bindings = <&kp U>, <&a_macro>;
-
-            tapping-term-ms = <150>;
-        };
     };
 
     macros {
-        ae_macro: ae_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(U) &kp A>;
-            label = "AE_MACRO";
-        };
-
-        oe_macro: oe_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(U) &kp O>;
-            label = "OE_MACRO";
-        };
-
-        a_macro: a_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(A)>;
-            label = "A_MACRO";
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
@@ -74,45 +28,81 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC  &none        &none           &none               &none             &none                        &none  &none              &none                &none            &none           &none
-&none    &kp Q        &kp W           &kp E               &kp R             &kp T                        &kp Y  &td_a              &td_ae               &td_oe           &kp P           &none
-&none    &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_COMMAND D  &mt LEFT_SHIFT F  &kp G                        &kp H  &mt RIGHT_SHIFT J  &mt RIGHT_COMMAND K  &mt RIGHT_ALT L  &mt RCTRL SEMI  &kp DOUBLE_QUOTES
-&none    &kp Z        &kp X           &kp C               &kp V             &kp B  &none        &none    &kp N  &kp M              &kp COMMA            &kp DOT          &kp FSLH        &none
-                                      &none               &kp TAB           &mo 1  &kp SPACE    &kp RET  &mo 2  &kp BSPC           &none
+&none  &none           &none           &none               &none             &none                                   &none            &none              &none                &none            &none                    &none
+&none  &kp Q           &kp W           &kp E               &kp R             &kp T                                   &kp Y            &kp U              &kp I                &kp O            &kp P                    &none
+&none  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &kp G                                   &kp H            &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMICOLON  &none
+&none  &kp Z           &kp X           &kp C               &kp V             &kp B        &none        &none         &kp N            &kp M              &kp COMMA            &kp DOT          &kp FSLH                 &none
+                                       &none               &lt 6 ESCAPE      &lt 4 SPACE  &lt 2 TAB    &lt 3 RETURN  &lt 5 BACKSPACE  &lt 7 DELETE       &none
             >;
         };
 
-        lower_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
-
+        button {
             bindings = <
-&trans  &none      &none         &none         &none           &none                     &none     &none     &none         &none      &none              &none
-&none   &kp N1     &kp N2        &kp N3        &kp N4          &kp N5                    &kp N6    &kp N7    &kp N8        &kp N9     &kp N0             &none
-&none   &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &none                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp DOUBLE_QUOTES  &none
-&none   &none      &none         &none         &none           &none   &none     &none   &none     &none     &none         &none      &none              &none
-                                 &none         &trans          &trans  &trans    &trans  &trans    &trans    &none
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
 
-        raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
-
+        mouse {
             bindings = <
-&trans  &none            &none          &none         &none       &none                          &none   &none                 &none                  &none           &none      &none
-&none   &kp EXCLAMATION  &kp AT_SIGN    &kp POUND     &kp DOLLAR  &kp PERCENT                    &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL       &kp TILDE  &none
-&none   &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp MINUS   &kp PLUS                       &none   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDERSCORE  &kp PIPE   &none
-&none   &none            &none          &none         &none       &none        &none     &none   &none   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none           &none      &none
-                                        &none         &trans      &trans       &trans    &trans  &trans  &trans                &none
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        sym {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        num {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        media {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        fun {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
