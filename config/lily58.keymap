@@ -33,31 +33,31 @@
 
         button {
             bindings = <
-&none  &none       &none      &none       &none        &none                         &none       &none        &none       &none      &none       &none
-&none  &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_REDO                    &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &none
-&none  &kp LGUI    &kp LALT   &kp LCTRL   &kp LSHFT    &none                         &none       &kp RSHFT    &kp RCTRL   &kp RALT   &kp RGUI    &none
-&none  &none       &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kt K_REDO  &none     &none   &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &none       &none
-                              &none       &trans       &trans      &trans    &trans  &trans      &trans       &none
+&none  &none       &none      &none       &none        &none                       &none       &none        &none       &none      &none       &none
+&none  &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_REDO                  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &none
+&none  &kp LGUI    &kp LALT   &kp LCTRL   &kp LSHFT    &none                       &none       &kp RSHFT    &kp RCTRL   &kp RALT   &kp RGUI    &none
+&none  &none       &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kt K_REDO  &none    &none  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &none       &none
+                              &none       &none        &none       &none    &none  &none       &none        &none
             >;
         };
 
         mouse {
             bindings = <
-&none  &none     &none     &none      &none      &none                     &none       &none        &none       &none      &none       &none
-&none  &none     &none     &none      &none      &none                     &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                     &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT  &none       &none
-&none  &none     &none     &none      &none      &none   &none     &none   &none       &none        &none       &none      &none       &none
-                           &none      &trans     &trans  &trans    &trans  &trans      &trans       &none
+&none  &none     &none     &none      &none      &none                  &none       &none        &none       &none      &none       &none
+&none  &none     &none     &none      &none      &none                  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                  &kp LEFT    &kp DOWN     &kp UP      &kp RIGHT  &none       &none
+&none  &none     &none     &none      &none      &none  &none    &none  &none       &none        &none       &none      &none       &none
+                           &none      &none      &none  &none    &none  &none       &none        &none
             >;
         };
 
         sym {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&none  &none           &none     &none      &none                 &none                                      &none  &none      &none      &none     &none     &none
+&none  &kp LEFT_BRACE  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE                            &none  &none      &none      &none     &none     &none
+&none  &kp COLON       &kp DLLR  &kp PRCNT  &kp CARET             &kp PLUS                                   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp GRAVE       &kp EXCL  &kp AT     &kp HASH              &kp PIPE               &none        &none  &none  &none      &none      &none     &none     &none
+                                 &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS    &none  &none  &none      &none
             >;
         };
 
